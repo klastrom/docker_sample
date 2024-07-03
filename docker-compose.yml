@@ -1,18 +1,18 @@
-version: "3"
-
 services:
   app:
+    container_name: hogehoge_app
     build:
       context: .
       dockerfile: docker/app/Dockerfile
     ports:
       - "50080:80"
     volumes:
-    - ./src:/var/www/html
+    - ./hogehoge:/var/www/html
     depends_on:
       - db
 
   db:
+    container_name: hogehoge_db
     build:
       context: .
       dockerfile: docker/db/Dockerfile
